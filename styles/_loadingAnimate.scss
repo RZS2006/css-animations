@@ -1,0 +1,59 @@
+.loading-animate {
+    .loading-animate-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader {
+        position: relative;
+        width: 220px;
+        height: 220px;
+
+        .loader-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: calc(50% - 10px);
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: white;
+                animation: grow 2s ease infinite;
+            }
+        }
+
+        @for $i from 1 through 10 {
+            .loader-dot:nth-child(#{$i}) {
+              transform: rotate($i * 36deg - 36deg);
+            }
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @for $i from 1 through 10 {
+            .loader-dot:nth-child(#{$i})::before {
+              animation-delay: $i * 0.2s - 0.2s;
+            }
+        }
+    }
+}

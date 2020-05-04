@@ -1,0 +1,49 @@
+.nav-slide {
+    .nav-slide-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav {
+        height: 50px;
+        background-color:rgb(47, 125, 163);
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            height: 100%;
+            width: 120px;
+            text-align: center;
+            padding: 15px 20px;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: rgb(37, 49, 114);
+            }
+
+        }
+
+        @for $i from 2 through 5 {
+            a:nth-child(#{$i}):hover ~ .underline {
+              left: $i * 120px - 120px;
+            }
+        }
+
+        .underline {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 5px;
+            width: 120px;
+            background-color:rgb(0, 16, 87);
+            transition: left 0.4s ease;
+        }
+    }
+}

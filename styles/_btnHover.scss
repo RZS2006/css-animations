@@ -1,0 +1,68 @@
+.btn-hover {
+    .btn-hover-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn {
+            height: 50px;
+            width: 180px;
+            border:  white 2px solid;
+            background-color: rgb(17, 4, 113);
+            color: white;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin: 0 20px;
+            cursor: pointer;
+            position: relative;
+            z-index: 20;
+            overflow: hidden;
+            border-radius: 25px;
+
+            &:hover {
+                color: rgb(17, 4, 113);
+                transition: 0.8s;
+            }
+        }
+
+        .one {
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 100%;
+                background-color: white;
+                z-index: -1;
+                transition: 0.8s;
+                border-radius: 0 40% 40% 0;
+            }
+
+            &:hover::before {
+                width: 200%;
+            }
+        }
+
+        .two {
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 0;
+                background-color: white;
+                z-index: -1;
+                transition: 0.8s;
+                border-radius: 0 0 40% 40%;
+            }
+
+            &:hover::before {
+                height: 200%;
+            }
+        }
+    }
+}

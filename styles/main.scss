@@ -1,0 +1,55 @@
+/*Imports*/
+@import "./navSlide";
+@import "./loadingAnimate";
+@import "./btnHover";
+@import "./cardAnimate";
+
+/*Variables*/
+$bgColors: (
+    "light": rgb(96, 156, 186),
+    "med-light": rgb(54, 128, 177),
+    "med-dark": rgb(20, 34, 178),
+    "dark": rgb(17, 4, 113)
+);
+
+$fwLight: 400;
+$fwBold: 600;
+
+/*Styles*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    padding: 60px 0;
+
+    &.nav-slide {
+        background-color: map-get($bgColors, "light");
+    }
+
+    &.loading-animate {
+        background-color: map-get($bgColors, "med-light");
+    }
+
+    &.card-animate {
+        background-color: map-get($bgColors, "med-dark");
+    }
+
+    &.btn-hover {
+        background-color: map-get($bgColors, "dark");
+    }
+}
+
+.container {
+    height: 100%;
+    width: 85%;
+    margin: 0 auto;
+}
